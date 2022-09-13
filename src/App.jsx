@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import { Message } from './components/Message';
 import { Meeting } from './components/Meeting';
 import { Chat } from './components/Chat';
 import { Footer } from './components/Footer';
@@ -32,7 +31,7 @@ export function App() {
         }, 1000);
       }
       console.log('canged');
-    } /* [messageList] */
+    }
   );
 
   return (
@@ -41,7 +40,6 @@ export function App() {
         <h1>My first app on react</h1>
       </header>
       <Meeting changeName={changeName} />
-      <Message name={name} />
       <Chat
         messageList={messageList}
         changeMessageList={changeMessageList}

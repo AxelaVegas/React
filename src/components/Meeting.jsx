@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ButtonMUI } from './button/Button';
+import TextField from '@mui/material/TextField';
 
 export const Meeting = ({ changeName }) => {
   const [name, setName] = useState('');
@@ -16,8 +18,14 @@ export const Meeting = ({ changeName }) => {
     <div className="body">
       <div className="app-body">
         <p>So, meeting! What is your name</p>
-        <input type="text" onChange={handelChange} />
-        <button onClick={longHandleChange}>SENd</button>
+        <div className='meeting-form'>
+
+          {/* <input type="text" onChange={handelChange} /> */}
+          <TextField label={'enter your name'} onChange={handelChange} />
+
+          {/* ??? почему не получалось сделать без СПАНА */}
+          <span onClick={longHandleChange}><ButtonMUI label="SEND" /></span>
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,15 @@
 .App {
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.chat {
-
+.meeting-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .App-header {
