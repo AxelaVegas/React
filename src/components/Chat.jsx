@@ -22,11 +22,11 @@ export const Chat = (props) => {
       <form>
         <label className="chat">
           <p>{name}</p>
-          <TextField 
-            label={'enter your name'} 
+          <TextField
+            label={'enter your name'}
             onChange={handleChange}
-            name="name" 
-            />
+            name="name"
+          />
           {/* <input
             type="text"
             name="name"
@@ -35,7 +35,9 @@ export const Chat = (props) => {
           /> */}
           {/* <input type="text" name="name" className="inp-message" /> */}
           {/* <input onClick={longHandleChange} value="Отправить" /> */}
-          <span onClick={longHandleChange}><ButtonMUI label="SEND" /></span>
+          <span onClick={longHandleChange}>
+            <ButtonMUI label="SEND" />
+          </span>
         </label>
       </form>
     </div>

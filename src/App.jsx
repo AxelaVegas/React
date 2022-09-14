@@ -20,19 +20,17 @@ export function App() {
     setValue(copy);
   };
 
-  useEffect(
-    () => {
-      if (
-        messageList.length > 0 &&
-        messageList[messageList.length - 1].author !== 'Bot'
-      ) {
-        setTimeout(() => {
-          changeMessageList('Bot', 'Я Бот');
-        }, 1000);
-      }
-      console.log('canged');
+  useEffect(() => {
+    if (
+      messageList.length > 0 &&
+      messageList[messageList.length - 1].author !== 'Bot'
+    ) {
+      setTimeout(() => {
+        changeMessageList('Bot', 'Я Бот');
+      }, 1000);
     }
-  );
+    console.log('canged');
+  });
 
   return (
     <div className="App">
