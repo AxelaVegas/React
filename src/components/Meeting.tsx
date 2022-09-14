@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { ButtonMUI } from './button/Button';
 import TextField from '@mui/material/TextField';
 
-export const Meeting = ({ changeName }) => {
+interface MeetingProps {
+  changeName: (ev: string) => void;
+}
+
+export const Meeting: FC<MeetingProps> = ({ changeName }) => {
   const [name, setName] = useState('');
 
-  const handelChange = (ev) => {
+  const handelChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setName(ev.target.value);
-    /* changeName(ev.target.value) */
   };
 
   const longHandleChange = () => {

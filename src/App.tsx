@@ -4,18 +4,19 @@ import { Meeting } from './components/Meeting';
 import { Chat } from './components/Chat';
 import { Footer } from './components/Footer';
 import { useEffect } from 'react';
+import { Messages } from './types';
 
 export function App() {
-  const [name, setName] = useState(undefined);
-  const [messageList, setValue] = useState([]);
+  const [name, setName] = useState<string>('');
+  const [messageList, setValue] = useState<Messages>([]);
 
-  const changeName = (ev) => {
+  const changeName = (ev: string) => {
     setName(ev);
   };
 
-  const changeMessageList = (user, text) => {
+  const changeMessageList = (user: string, text: string) => {
     /* setValue(user, text) */
-    let copy = Object.assign([], messageList);
+    const copy = Object.assign([], messageList);
     copy.push({ author: user, text: text });
     setValue(copy);
   };

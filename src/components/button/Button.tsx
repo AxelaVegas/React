@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 
 interface ButtonMuiProps {
-  label: number;
+  label: string;
 }
 
 export const ButtonMUI = ({ label }: ButtonMuiProps) => {
