@@ -22,7 +22,11 @@ export const Meeting: FC<MeetingProps> = ({ changeName }) => {
       <div className="app-body">
         <p>So, meeting! What is your name</p>
         <div className="meeting-form">
-          <TextField label={'enter your name'} onChange={handelChange} />
+          <TextField
+            label={'enter your name'}
+            onChange={handelChange}
+            autoFocus={true}
+          />
 
           {/* ??? почему не получалось сделать без СПАНА */}
           <span onClick={longHandleChange}>

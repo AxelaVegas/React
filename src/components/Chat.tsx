@@ -3,6 +3,7 @@ import { WindowMessages } from './WindowMessages';
 import TextField from '@mui/material/TextField';
 import { ButtonMUI } from './button/Button';
 import { Messages } from 'src/types';
+import { ChatsList } from './ChatsList';
 
 interface ChatProps {
   author: string;
@@ -25,7 +26,10 @@ export const Chat: FC<ChatProps> = (props) => {
 
   return (
     <div className="app-body">
-      <WindowMessages messageList={messageList} />
+      <div className="chat-zone">
+        <ChatsList />
+        <WindowMessages messageList={messageList} />
+      </div>
       <form>
         <label className="chat">
           <p>{name}</p>
