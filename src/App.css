@@ -1,9 +1,24 @@
 .App {
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.chat {
+.chat-zone {
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  
+  gap: 80px;
+}
 
+.meeting-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .App-header {

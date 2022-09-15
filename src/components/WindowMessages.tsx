@@ -1,4 +1,11 @@
-export const WindowMessages = (props) => {
+import { FC } from 'react';
+import { Messages } from 'src/types';
+
+interface WindowMessagesProps {
+  messageList: Messages;
+}
+
+export const WindowMessages: FC<WindowMessagesProps> = (props) => {
   const messageList = props.messageList;
   return (
     <ul>

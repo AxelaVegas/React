@@ -1,39 +1,37 @@
 import { useState } from 'react';
 import './App.css';
-import { Message } from './components/Message';
 import { Meeting } from './components/Meeting';
 import { Chat } from './components/Chat';
 import { Footer } from './components/Footer';
 import { useEffect } from 'react';
+import { Messages } from './types';
 
 export function App() {
-  const [name, setName] = useState(undefined);
-  const [messageList, setValue] = useState([]);
+  const [name, setName] = useState<string>('');
+  const [messageList, setValue] = useState<Messages>([]);
 
-  const changeName = (ev) => {
+  const changeName = (ev: string) => {
     setName(ev);
   };
 
-  const changeMessageList = (user, text) => {
+  const changeMessageList = (user: string, text: string) => {
     /* setValue(user, text) */
-    let copy = Object.assign([], messageList);
+    const copy = Object.assign([], messageList);
     copy.push({ author: user, text: text });
     setValue(copy);
   };
 
-  useEffect(
-    () => {
-      if (
-        messageList.length > 0 &&
-        messageList[messageList.length - 1].author !== 'Bot'
-      ) {
-        setTimeout(() => {
-          changeMessageList('Bot', 'Я Бот');
-        }, 1000);
-      }
-      console.log('canged');
-    } /* [messageList] */
-  );
+  useEffect(() => {
+    if (
+      messageList.length > 0 &&
+      messageList[messageList.length - 1].author !== 'Bot'
+    ) {
+      setTimeout(() => {
+        changeMessageList('Bot', 'Я Бот');
+      }, 1000);
+    }
+    console.log('canged');
+  });
 
   return (
     <div className="App">
@@ -41,7 +39,6 @@ export function App() {
         <h1>My first app on react</h1>
       </header>
       <Meeting changeName={changeName} />
-      <Message name={name} />
       <Chat
         messageList={messageList}
         changeMessageList={changeMessageList}
